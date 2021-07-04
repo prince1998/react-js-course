@@ -42,7 +42,3 @@ default keyword means if we import something from that file, it will always be o
 Import default and ONLY export of the file Name in the receiving file is up to you
 
 A file can only contain one default and an unlimited amount of named exports. You can also mix the one default with any amount of named exports in one and the same file.
-
-
-
-
