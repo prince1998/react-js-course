@@ -19,4 +19,7 @@ App function in App.js code gets transformed into a cryptic function (Inspect ->
 - Component in React is just a JS function
 - Convention is to keep the function name same as file name
 
-# The concept of "composition"("children props")
+# A closer look at JSX
+- JSX is just syntactic sugar which will be converted to browser compatible code by React.
+- The transformed code can be be seen using Developer tools -> Sources -> static/js -> main.chunk.js
+- Previously, we had to put import React from 'react' in which ever code we used JSX but with create-react-app we do not need to import react anymore.

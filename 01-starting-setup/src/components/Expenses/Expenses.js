@@ -1,8 +1,9 @@
-import Card from './Card'; // Wrapper for Expenses 
+import React from "react";
+import Card from '../UI/Card'; // Wrapper for Expenses 
 import "./Expenses.css";
 import ExpenseItem from "./ExpenseItem";
 
-function Expenses(props) {
+const Expenses = (props) => {
   return (
     <Card className = 'expenses'>
       <ExpenseItem

@@ -1,4 +1,5 @@
-import Card from './Card'; // Wrapper for ExpenseItem 
+import React from "react";
+import Card from '../UI/Card'; // Wrapper for ExpenseItem 
 import ExpenseDate from './ExpenseDate';
 //Import CSS
 import './ExpenseItem.css';
@@ -6,7 +7,7 @@ import './ExpenseItem.css';
 //Custom Component
 //Convention is to keep the function name same as file name
 //We can have only one root element in return; therefore we wr ed everything inside div and returned div
-function ExpenseItem(props) {
+const ExpenseItem = (props) => {
   
   return (
     <Card className = "expense-item"> 
