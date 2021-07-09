@@ -7,3 +7,4 @@ We combine HTML, CSS and JS in all these components. And all components combine 
 - React uses a "declarative approach" to make these components.
 - You would have to define target state(s) and let React figure out the actual JavaScript DOM instructions.
 - We just build our own custom HTML elements and combine them together to make our user interface.
+

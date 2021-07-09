@@ -14,5 +14,6 @@ npm start
 Project Structure
 - src will contain your source code files
 - package.json will contain all dependencies for this project eg. react.
-- npm install will look into package.json file and will download and install all the required packages and dependencies into the project folder. Its by default included in npm create-react-app.
+- npm install will look into package.json file and will download and install all the required packages and dependencies into the project folder. Its by default included in npx create-react-app my-app.
 - After you run npm install, you will have a **node_modules** folder which will hold all your dependencies.
+- npm start will start the server and look for changes in file and preview it in the browser. It will also convert the code to be compatible with the browser.
