@@ -1,5 +1,6 @@
 import React from "react"; //Imported react to demonstrate JSX - previosly had to import it everytime but with create-react-app we dont need to import this
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 const App = () => {
   //App is a component
@@ -37,9 +38,9 @@ const App = () => {
 
   //The below JSX code is transformed into above code by react
   // Commented to demonstrate React method createElement if not using create-react-app
-  return (//This is jsx syntax by React. It allows to put HTML code inside JS.
+  return (//This is jsx syntax by React. It allows to put HTML code inside JS. // items is user defined variable; same to be used in Expenses.js file
     <div>
-      <h2>Let's get started!</h2>
+      <NewExpense />
       <Expenses items = {expenses}/>
     </div>
   );
