@@ -2,7 +2,7 @@ import React from "react"; //Imported react to demonstrate JSX - previosly had t
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 
-const App = () => {
+const App = (props) => {
   //App is a component
   const expenses = [
     {
@@ -26,6 +26,11 @@ const App = () => {
     },
   ];
 
+  const addExpenseHandler = expense => { //expenseData passed as parameter and reflected in expense here
+    console.log("In App.js");
+    console.log(expense);
+  }
+
   // createElement has 3 arguments
   // (name of HTML element, attributes of the HTML element, content of the HTML element)
   // Since div is a wrapper here, this is why we need root elements in JSX
@@ -40,7 +45,7 @@ const App = () => {
   // Commented to demonstrate React method createElement if not using create-react-app
   return (//This is jsx syntax by React. It allows to put HTML code inside JS. // items is user defined variable; same to be used in Expenses.js file
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense = {addExpenseHandler}/> 
       <Expenses items = {expenses}/>
     </div>
   );
