@@ -1,35 +1,40 @@
-import React from "react"; //Imported react to demonstrate JSX - previosly had to import it everytime but with create-react-app we dont need to import this
+import React, { useState } from "react"; //Imported react to demonstrate JSX - previosly had to import it everytime but with create-react-app we dont need to import this
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 
+const DUMMY_EXPENSES = [ //dummy date to initilise our state with
+  {
+    id: "e1",
+    title: "Toilet Paper",
+    amount: 94.12,
+    date: new Date(2020, 7, 14),
+  },
+  { id: "e2", title: "New TV", amount: 799.49, date: new Date(2021, 2, 12) },
+  {
+    id: "e3",
+    title: "Car Insurance",
+    amount: 294.67,
+    date: new Date(2021, 2, 28),
+  },
+  {
+    id: "e4",
+    title: "New Desk (Wooden)",
+    amount: 450,
+    date: new Date(2021, 5, 12),
+  },
+];
+
 const App = (props) => {
+  const [expenses, setExpenses] =  useState(DUMMY_EXPENSES);
+
   //App is a component
-  const expenses = [
-    {
-      id: "e1",
-      title: "Toilet Paper",
-      amount: 94.12,
-      date: new Date(2020, 7, 14),
-    },
-    { id: "e2", title: "New TV", amount: 799.49, date: new Date(2021, 2, 12) },
-    {
-      id: "e3",
-      title: "Car Insurance",
-      amount: 294.67,
-      date: new Date(2021, 2, 28),
-    },
-    {
-      id: "e4",
-      title: "New Desk (Wooden)",
-      amount: 450,
-      date: new Date(2021, 5, 12),
-    },
-  ];
+  
 
   const addExpenseHandler = expense => { //expenseData passed as parameter and reflected in expense here
-    console.log("In App.js");
-    console.log(expense);
-  }
+    setExpenses((prevExpenses)  => {
+      return [expense, ...prevExpenses];
+    });
+  };
 
   // createElement has 3 arguments
   // (name of HTML element, attributes of the HTML element, content of the HTML element)
