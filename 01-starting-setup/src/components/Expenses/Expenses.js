@@ -5,11 +5,18 @@ import ExpenseItem from "./ExpenseItem";
 import ExpensesFilter from "./ExpensesFilter";
 
 const Expenses = (props) => {
+
   const [filteredYear, setFilteredYear] = useState("2020");
   //ExpensesFilter is a controlled component because Expenses has all the logic for Filtering Year whereas ExpensesFilter just presents the dropdown
   const filterChangeHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
+
   };
+
+  const filteredExpenses = 
+    props.items.filter((expense) => {
+      return expense.date.getFullYear().toString() === filteredYear; 
+    });
 
   return (
     <div>
@@ -18,9 +25,9 @@ const Expenses = (props) => {
           selected={filteredYear}
           onChangeFilter={filterChangeHandler}
         />
-        {props.items.map((expense) => (
+        {filteredExpenses.map((expense) => (
           <ExpenseItem
-            key = {Expenses.id} //can be added to html element or your own custom element to avoid bugs and performance issues and tell React how to arrange if a new items comes in
+            key = {expense.id} //can be added to html element or your own custom element to avoid bugs and performance issues and tell React how to arrange if a new items comes in
             title={expense.title}
             amount={expense.amount}
             date={expense.date}
