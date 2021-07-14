@@ -20,6 +20,7 @@ const Expenses = (props) => {
         />
         {props.items.map((expense) => (
           <ExpenseItem
+            key = {Expenses.id} //can be added to html element or your own custom element to avoid bugs and performance issues and tell React how to arrange if a new items comes in
             title={expense.title}
             amount={expense.amount}
             date={expense.date}
